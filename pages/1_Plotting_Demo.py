@@ -27,12 +27,12 @@ def plotting_demo():
     chart = st.line_chart(last_rows)
 
     for i in range(1, 101):
-        new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
+        new_rows = last_rows[-1, :] + np.random.randn(10, 1).cumsum(axis=0)
         status_text.text("%i%% Complete" % i)
         chart.add_rows(new_rows)
         progress_bar.progress(i)
         last_rows = new_rows
-        time.sleep(0.05)
+        time.sleep(0.5)
 
     progress_bar.empty()
 
@@ -46,9 +46,7 @@ st.set_page_config(page_title="Plotting Demo", page_icon="📈")
 st.markdown("# Plotting Demo")
 st.sidebar.header("Plotting Demo")
 st.write(
-    """This demo illustrates a combination of plotting and animation with
-Streamlit. We're generating a bunch of random numbers in a loop for around
-5 seconds. Enjoy!"""
+    """This  Enjoy!"""
 )
 
 plotting_demo()
